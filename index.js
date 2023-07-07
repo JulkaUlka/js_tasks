@@ -179,13 +179,14 @@ doesBrickFit(1, 2, 2, 1, 1);
 // без розширення.
 
 function extractFileName(filePath) {
-  let firstIndex = filePath.lastIndexOf("w") + 1;
-  let lastIndex = filePath.lastIndexOf(".");
-  let fileName = filePath.slice(firstIndex, lastIndex);
+  let lastIndex = filePath.lastIndexOf("\\");
+  let extensionIndex = filePath.lastIndexOf(".");
+  let fileName = filePath.slice(lastIndex + 1, extensionIndex);
 
   console.log(fileName);
 }
-extractFileName("c:WebServershome\testsitewwwmyfile.txt");
+
+extractFileName("c:\\WebServers\\home\\testsite\\www\\myfile.txt");
 
 //__________Task 11 ___________//
 // Дано два рядки. Чи можна перший рядок отримати з другого циклічним
@@ -716,5 +717,3 @@ function textAnalysis(text) {
 textAnalysis(
   "The cat (Felis catus) is a domestic species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is commonly referred to as the domestic cat or house cat to distinguish it from the wild members of the family. Cats are commonly kept as house pets but can also be farm cats or feral cats; the feral cat ranges freely and avoids human contact. Domestic cats are valued by humans for companionship and their ability to kill vermin. About 60 cat breeds are recognized by various cat registries."
 );
-
-
